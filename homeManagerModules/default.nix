@@ -1,3 +1,3 @@
 { ... }: {
-  imports = [ ./editors ./shells ];
+  imports = [ ./applications ./editors ./shells ];
 }
