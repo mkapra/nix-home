@@ -1,4 +1,4 @@
-{ ..., lib, config, options }: {
+{ lib, config, options, ... }: {
   options = {
     mkapraConfig.nushell.enable = lib.mkEnableOption "enable nushell";
   };
