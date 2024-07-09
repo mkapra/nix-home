@@ -3,10 +3,7 @@
   home.stateVersion = "23.11";
   home.username = "mkapra";
 
-  programs.home-manager.enable = true;
+  imports = [ ./homeManagerModules ];
 
-  programs.helix = {
-    enable = true;
-    defaultEditor = true;
-  };
+  programs.home-manager.enable = true;
 }
