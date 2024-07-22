@@ -18,23 +18,14 @@
       rc = "rebase --continue";
       s = "status";
    };
-    difftastic.enable = true;
-    extraConfig = {
-      diff = {
-        tool = "difftastic";
-      };
-      difftool = {
-        prompt = false;
-        "difftastic" = {
-          cmd = "difft \"\$LOCAL\" \"\$REMOTE\"";
-        };
-      };
-      pager = {
-        difftool = true;
-      };
-      commit = {
-        template = "~/.config/git/message";
-      };
-    };
+   color = {
+     ui = "always";
+   };
+   diff-so-fancy.enable = true;
+   extraConfig = {
+     commit = {
+       template = "~/.config/git/message";
+     };
+   };
   };
 }
