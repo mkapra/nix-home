@@ -1,4 +1,9 @@
-{ ... }: {
+{ ... }:
+let
+  environmentVariables = {
+    SSH_AUTH_SOCK = "~/.ssh/ssh_auth_sock"
+  };
+in {
   home.file.".ssh/rc".text = ''
     #!/bin/bash
 
@@ -7,4 +12,10 @@
       ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
     fi
   '';
+
+  programs.nushell = {
+    inherit environmentVariables;
+  };
+
+  home.sessionVariables = environmentVariables;
 }
