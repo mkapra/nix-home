@@ -1,7 +1,7 @@
 { ... }:
 let
   environmentVariables = {
-    SSH_AUTH_SOCK = "~/.ssh/ssh_auth_sock"
+    SSH_AUTH_SOCK = "~/.ssh/ssh_auth_sock";
   };
 in {
   home.file.".ssh/rc".text = ''
