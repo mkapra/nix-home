@@ -13,8 +13,14 @@ in {
     fi
   '';
 
-  programs.nushell = {
-    inherit environmentVariables;
+  programs.nushell.extraEnv = ''
+    let sock = $"($env.HOME)/.ssh/ssh_auth_sock"
+    if ($env.SSH_AUTH_SOCK | str length) != 0 and ($env.SSH_AUTH_SOCK != $sock) {
+      rm -f $sock
+      ln -sf $env.SSH_AUTH_SOCK $sock
+      $env.SSH_AUTH_SOCK = $sock
+    }
+  '';
   };
 
   home.sessionVariables = environmentVariables;
