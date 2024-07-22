@@ -21,7 +21,6 @@ in {
       $env.SSH_AUTH_SOCK = $sock
     }
   '';
-  };
 
   home.sessionVariables = environmentVariables;
 }
