@@ -17,15 +17,15 @@
       p = "push";
       rc = "rebase --continue";
       s = "status";
-   };
-   color = {
-     ui = "always";
-   };
-   diff-so-fancy.enable = true;
-   extraConfig = {
-     commit = {
-       template = "~/.config/git/message";
-     };
-   };
+    };
+    diff-so-fancy.enable = true;
+    extraConfig = {
+      color = {
+        ui = "always";
+      };
+      commit = {
+        template = "~/.config/git/message";
+      };
+    };
   };
 }
