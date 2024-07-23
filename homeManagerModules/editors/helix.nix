@@ -47,4 +47,9 @@
       yaml-language-server
     ];
   };
+
+  programs.nushell.environmentVariables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
+  };
 }
