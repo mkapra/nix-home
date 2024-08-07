@@ -38,6 +38,7 @@
     extraPackages = with pkgs; [
       dockerfile-language-server-nodejs
       marksman
+      markdown-oxide
       nil
       nodePackages.bash-language-server
       perlnavigator
