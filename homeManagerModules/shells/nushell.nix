@@ -79,6 +79,7 @@
     programs.atuin = {
       enable = true;
       enableNushellIntegration = true;
+      settings.workspaces = true;
     };
 
     programs.ripgrep.enable = true;
