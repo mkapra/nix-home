@@ -5,7 +5,8 @@
     escapeTime = 1;
     secureSocket = false;
     sensibleOnTop = true;
-    mouse = true;
+    keyMode = "vi";
+    historyLimit = 10000;
     terminal = "tmux-256color";
     extraConfig = ''
       set -ga terminal-overrides ",*256col*:Tc,kitty:Tc"
@@ -37,6 +38,13 @@
       bind-key -n M-9 select-window -t 9
 
       set-option -g renumber-windows on
+
+      bind-key -n M-q copy-mode
+
+      bind -n M-S-Left resize-pane -L 5
+      bind -n M-S-Right resize-pane -R 5
+      bind -n M-S-Up resize-pane -U 5
+      bind -n M-S-Down resize-pane -D 5
 
       ########## Styling ##########
       set -g status-position bottom
