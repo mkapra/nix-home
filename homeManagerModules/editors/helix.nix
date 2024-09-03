@@ -3,7 +3,17 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "rose_pine_dawn";
+      theme = "everforest_light";
+      keys.normal = {
+        V = ["goto_first_nonwhitespace" "extend_to_line_end"];
+        D = ["ensure_selections_forward" "extend_to_line_end"];
+        a = ["append_mode" "collapse_selection"];
+      };
+      keys.select = {
+        ";" = ["collapse_selection" "normal_mode"];
+        x = "extend_line";
+        V = "extend_to_line_end";
+      };
       editor = {
         line-number = "relative";
         true-color = true;
@@ -14,18 +24,12 @@
           select = "underline";
         };
         whitespace.render = {
-          nbsp = "all";
-          newline = "all";
           tab = "all";
+          space = "all";
         };
-        file-picker = {
-          hidden = false;
-        };
-        indent-guides = {
-          render = true;
-          skip-levels = 1;
-          character = "⸽";
-        };
+        file-picker.hidden = false;
+        indent-guides.render = true;
+        lsp.display-inlay-hints = true;
       };
     };
     languages = {
