@@ -2,7 +2,7 @@
   programs.tmux = {
     enable = true;
     baseIndex = 1;
-    escapeTime = 1;
+    escapeTime = 5;
     secureSocket = false;
     sensibleOnTop = true;
     keyMode = "vi";
@@ -46,26 +46,20 @@
       bind -n M-S-Up resize-pane -U 5
       bind -n M-S-Down resize-pane -D 5
 
-      ########## Styling ##########
-      set -g status-position bottom
-      set -g status-justify "left"
-      set -g status "on"
+      # set terminal window title (update every second)
+      set-option -g status-interval 1
+      set-option -g set-titles on
+      set-option -g set-titles-string "#H: #W"
 
-      set -g status-style "none,bg=#f2e9e1"
-      set -g pane-border-style "fg=#f2e9e1,bg=default"
-      set -g pane-active-border-style "fg=#ea9d34,bg=default"
+      # Make inactive border a bit less noticeable
+      set -g pane-border-style fg="#e3ddcc"
 
-      set -g message-command-style "fg=#56949f,bg=#f2e9e1"
-      set -g message-style "fg=#56949f,bg=#f2e9e1"
-      setw -g window-status-activity-style "none,fg=#93b259,bg=#f2e9e1"
-      setw -g window-status-style "none,fg=#286983,bg=#f2e9e1"
-      set -g status-left "#[fg=#d7827e,bg=#f2e9e1]   "
-      set -g status-right "#[fg=#56949f,bg=#f2e9e1]  #H   "
-
-      set -g status-right-length "100"
-      set -g status-left-length "100"
-      setw -g window-status-format "#[fg=#9893a5] #I∣#W "
-      setw -g window-status-current-format "#[fg=#286983,bold] #I∣#W "
+      # Status
+      set -g status-style "bg=default"
+      set -g status-right "#S @ #H [%H:%M]"
+      set -g status-left ""
+      setw -g window-status-format "#I:#W "
+      setw -g window-status-current-format "#[fg=green]#I:#W*"
     '';
   };
 
