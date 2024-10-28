@@ -1,10 +1,10 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
   environmentVariables = {
     SSH_AUTH_SOCK = "~/.ssh/ssh_auth_sock";
   };
 in {
-  home.file.".ssh/rc".enable = !config.mkapraConfig.nushell.enable;
+  home.file.".ssh/rc".enable = !config.programs.nushell.enable;
   home.file.".ssh/rc".text = ''
     #!/bin/bash                                                            
                                                                        
