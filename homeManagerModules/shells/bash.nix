@@ -58,4 +58,5 @@ __prompt_command() {
 
   programs.carapace.enableBashIntegration = config.programs.bash.enable;
   programs.direnv.enableBashIntegration = config.programs.bash.enable;
+  programs.zoxide.enableBashIntegration = config.programs.bash.enable;
 }
