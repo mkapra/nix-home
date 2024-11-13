@@ -10,11 +10,7 @@
     config = { theme = "ansi"; };
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
-
+  programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
   programs.direnv.enable = true;
   programs.carapace.enable = true;
