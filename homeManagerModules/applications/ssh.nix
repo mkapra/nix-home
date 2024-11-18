@@ -4,7 +4,6 @@ let
     SSH_AUTH_SOCK = builtins.getEnv "HOME" + "/.ssh/ssh_auth_sock";
   };
 in {
-  home.file.".ssh/rc".enable = !config.programs.nushell.enable;
   home.file.".ssh/rc".text = ''
     #!/bin/bash                                                            
                                                                        
@@ -21,6 +20,10 @@ in {
       ln -sf $env.SSH_AUTH_SOCK $sock
       $env.SSH_AUTH_SOCK = $sock
     }
+  '';
+
+  programs.tmux.extraConfig = ''
+    setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
   '';
 
   home.sessionVariables = environmentVariables;
