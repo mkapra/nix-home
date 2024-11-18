@@ -1,16 +1,16 @@
 { config, ... }:
 let
   environmentVariables = {
-    SSH_AUTH_SOCK = builtins.getEnv("HOME") + "/.ssh/ssh_auth_sock";
+    SSH_AUTH_SOCK = "$HOME/.ssh/ssh_auth_sock";
   };
 in {
   home.file.".ssh/rc".text = ''
-    #!/bin/bash                                                            
-                                                                       
+    #!/bin/bash
+
     # Fix SSH auth socket location so agent forwarding works with tmux.    
-    if test "$SSH_AUTH_SOCK" ; then                                        
-      ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock                           
-    fi                                                                     
+    if test "$SSH_AUTH_SOCK" ; then
+      ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+    fi
   '';
 
   programs.nushell.extraEnv = ''
