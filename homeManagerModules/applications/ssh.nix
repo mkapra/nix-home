@@ -1,7 +1,7 @@
 { config, ... }:
 let
   environmentVariables = {
-    SSH_AUTH_SOCK = builtins.getEnv "HOME" + "/.ssh/ssh_auth_sock";
+    SSH_AUTH_SOCK = builtins.getEnv("HOME") + "/.ssh/ssh_auth_sock";
   };
 in {
   home.file.".ssh/rc".text = ''
