@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.file = {
+    ".config/helix/themes/everforest_light.toml".source = ../files/helix_everforest_light.toml;
+  };
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
