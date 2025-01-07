@@ -6,5 +6,6 @@
     ./git.nix
     ./ssh.nix
     ./fd.nix
+    ./zellij.nix
   ];
 }
