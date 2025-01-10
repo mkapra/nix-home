@@ -2,6 +2,12 @@
   programs.zellij = {
     enable = true;
     settings = {
+      keybinds = {
+        unbind = "Ctrl o";
+        "shared_except \"session\" \"locked\"" = {
+          "bind \"Ctrl Alt o\"" = { SwitchToMode = "Session"; };
+        };
+      };
       themes = {
         everforest-light-custom = {
           bg = "#fdf6e3";
