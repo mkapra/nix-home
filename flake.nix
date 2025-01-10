@@ -13,6 +13,6 @@
     pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
   in {
     homeManagerModules.default = self.homeManagerModules.mkapra-home;
-    homeManagerModules.mkapra-home = import ./home.nix { inherit pkgs pkgs-deprecated pkgs-unstable; };
+    homeManagerModules.mkapra-home = import ./home.nix { inherit pkgs pkgs-deprecated pkgs-unstable system; };
   };
 }
