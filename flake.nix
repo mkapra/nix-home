@@ -3,7 +3,7 @@
   inputs.nixpkgs-deprecated.url = "nixpkgs/nixos-24.05";
   inputs.nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-  outputs = { self }: let
+  outputs = inputs@{ self }: let
     system = "x86_64-linux";
     pkgs = inputs.nixpkgs.legacyPackages.${system};
     pkgs-deprecated = inputs.nixpkgs-deprecated.legacyPackages.${system};
