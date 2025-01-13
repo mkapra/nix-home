@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs-unstable, ... }: {
   home.file = {
     ".config/helix/themes/everforest_light.toml".source = ../files/helix_everforest_light.toml;
   };
 
   programs.helix = {
+    package = pkgs-unstable.helix;
     defaultEditor = true;
     settings = {
       theme = "everforest_light";
@@ -42,7 +43,7 @@
         rulers = [ 80 ];
       }];
     };
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs-unstable; [
       dockerfile-language-server-nodejs
       marksman
       markdown-oxide
