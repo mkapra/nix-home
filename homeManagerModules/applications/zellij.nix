@@ -3,7 +3,7 @@
     enable = true;
   };
 
-  home.file.".config/zellij/config.kdl".source = ''
+  home.file.".config/zellij/config.kdl".text = ''
 theme "everforest-light-custom"
 default_layout "compact"
 
