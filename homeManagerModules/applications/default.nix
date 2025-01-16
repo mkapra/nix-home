@@ -8,5 +8,6 @@
     ./ssh.nix
     ./fd.nix
     ./zellij.nix
+    ./kitty.nix
   ];
 }
