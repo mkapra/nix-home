@@ -1,7 +1,5 @@
-{ ... }: {
-  programs.zellij = {
-    enable = true;
-  };
+{ pkgs-unstable, ... }: {
+  programs.zellij.package = pkgs-unstable.zellij;
 
   home.file.".config/zellij/config.kdl".text = ''
 theme "everforest-light-custom"
