@@ -20,11 +20,17 @@
     };
     diff-so-fancy.enable = true;
     extraConfig = {
-      color = {
-        ui = "always";
+      rerere.enabled = true;
+      color.ui = "always";
+      commit.template = "~/.config/git/message";
+      branch.sort = "-committerdate";
+      maintenance = {
+        auto = false;
+        strategy = "incremental";
       };
-      commit = {
-        template = "~/.config/git/message";
+      core = {
+        untrackedCache = true;
+        fsmonitor = true;
       };
     };
   };
