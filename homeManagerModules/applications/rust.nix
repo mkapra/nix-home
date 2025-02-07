@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, config, ... }: {
   options.mkapra-home.rust.enable = lib.mkEnableOption "install rust";
 
-  config = lib.mkIf mkapra-home.rust.enable {
+  config = lib.mkIf config.mkapra-home.rust.enable {
     home.packages = with pkgs; [
       gcc
       rustc
