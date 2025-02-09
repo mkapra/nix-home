@@ -3,7 +3,6 @@
 
   home.file.".config/zellij/config.kdl".text = ''
 theme "everforest-light-custom"
-default_layout "compact"
 
 keybinds {
 	shared_except "session" "locked" {
