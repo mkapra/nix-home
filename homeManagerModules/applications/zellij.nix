@@ -2,6 +2,7 @@
   programs.zellij.package = pkgs-unstable.zellij;
 
   home.file.".config/zellij/config.kdl".text = ''
+default_shell "nu"
 theme "everforest-light-custom"
 
 keybinds {
