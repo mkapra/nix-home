@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs-unstable, ... }: {
   imports = [
     ./btop.nix
     ./tmux.nix
@@ -8,5 +8,9 @@
     ./fd.nix
     ./zellij.nix
     ./kitty.nix
+  ];
+
+  home.packages = with pkgs-unstable; [
+    glow
   ];
 }
