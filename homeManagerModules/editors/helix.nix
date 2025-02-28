@@ -28,12 +28,22 @@
           select = "underline";
         };
         whitespace.render = {
+          space = "none";
           tab = "all";
-          space = "all";
+          nbsp = "none";
+          nnbsp = "none";
+          newline = "all";
         };
         file-picker.hidden = false;
-        indent-guides.render = true;
+        indent-guides = {
+          render = true;
+          skip-levels = 1;
+        };
         lsp.display-inlay-hints = true;
+        inline-diagnostics = {
+          cursor-line = "error";
+        };
+        end-of-line-diagnostics = "hint";
       };
     };
     languages = {
