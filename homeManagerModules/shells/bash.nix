@@ -5,6 +5,7 @@
     historyIgnore = [
       "ls"
       "exit"
+      "builtin *"
     ];
     bashrcExtra = ''
       export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
