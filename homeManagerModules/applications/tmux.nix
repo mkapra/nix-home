@@ -27,6 +27,8 @@
       bind-key -n 'M-Up' select-pane -U
       bind-key -n 'M-Down' select-pane -D
 
+      bind-key -n M-l last-window
+
       # navigate windows
       bind-key -n M-1 select-window -t 1
       bind-key -n M-2 select-window -t 2
