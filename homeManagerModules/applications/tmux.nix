@@ -62,14 +62,13 @@
 
       set -g status-style bg="#fdf6e3",fg="#5c6a72"
 
-      set -g status-left-length 30
-      set -g status-left "#[bg=#fdf6e3,fg=#d3c6aa]#[bg=#d3c6aa,fg=#5c6a72] #S #[bg=#fdf6e3,fg=#d3c6aa]  "
-
       set -g status-right-length 20
-      set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #h #[bg=#fdf6e3,fg=#d699b6]"
+      set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #S / 🖳 #h #[bg=#fdf6e3,fg=#d699b6]"
 
-      set -g window-status-format "#[bg=#fdf6e3,fg=#8ba4b0]#[bg=#8ba4b0,fg=#fdf6e3]#I #[bg=#b3c9c9,fg=#5c6a72] #W #[bg=#fdf6e3,fg=#b3c9c9]"
+      set -g window-status-format "#[bg=#FDF6E3,fg=#BDC3AF]#[bg=#BDC3AF,fg=#FDF6E3]#I #[bg=#E6E2CC,fg=#939F91] #W #[bg=#FDF6E3,fg=#E6E2CC]"
+
       set -g window-status-current-format "#[bg=#fdf6e3,fg=#e69875]#[bg=#e69875,fg=#fdf6e3]#I #[bg=#f7d3b0,fg=#5c6a72] #W #[bg=#fdf6e3,fg=#f7d3b0]"
+
       setw -g window-status-separator " "
     '';
   };
