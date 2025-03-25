@@ -47,7 +47,7 @@
       };
     };
     languages = {
-      language = with pkgs; [
+      language = [
         {
           name = "perl";
           text-width = 80;
@@ -56,14 +56,14 @@
         {
           name = "javascript";
           formatter = {
-            command = "${pkgs.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs-unstable.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
         {
           name = "typescript";
           formatter = {
-            command = "${pkgs.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs-unstable.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
