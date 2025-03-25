@@ -62,6 +62,8 @@
 
       set -g status-style bg="#fdf6e3",fg="#5c6a72"
 
+      set -g status-left ""
+
       set -g status-right-length 20
       set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #S / 🖳 #h #[bg=#fdf6e3,fg=#d699b6]"
 
