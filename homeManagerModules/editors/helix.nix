@@ -47,11 +47,27 @@
       };
     };
     languages = {
-      language = [{
-        name = "perl";
-        text-width = 80;
-        rulers = [ 80 ];
-      }];
+      language = with pkgs; [
+        {
+          name = "perl";
+          text-width = 80;
+          rulers = [ 80 ];
+        },
+        {
+          name = "javascript";
+          formatter = {
+            command = "${pkgs.nodePackages.prettier}/bin/prettier";
+            args = ["--parser" "typescript" "--print-width" "100"];
+          };
+        },
+        {
+          name = "typescript";
+          formatter = {
+            command = "${pkgs.nodePackages.prettier}/bin/prettier";
+            args = ["--parser" "typescript" "--print-width" "100"];
+          };
+        },
+      ];
     };
     extraPackages = with pkgs-unstable; [
       dockerfile-language-server-nodejs
