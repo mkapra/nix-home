@@ -64,8 +64,7 @@
 
       set -g status-left ""
 
-      set -g status-right-length 20
-      set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #S / 🖳 #h #[bg=#fdf6e3,fg=#d699b6]"
+      set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #S ｜ 🖳 #h #[bg=#fdf6e3,fg=#d699b6]"
 
       set -g window-status-format "#[bg=#FDF6E3,fg=#BDC3AF]#[bg=#BDC3AF,fg=#FDF6E3]#I #[bg=#E6E2CC,fg=#939F91] #W #[bg=#FDF6E3,fg=#E6E2CC]"
 
