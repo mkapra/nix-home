@@ -1,6 +1,6 @@
 {
-  inputs.nixpkgs.url = "nixpkgs/nixos-24.11";
-  inputs.nixpkgs-deprecated.url = "nixpkgs/nixos-24.05";
+  inputs.nixpkgs.url = "nixpkgs/nixos-25.05";
+  inputs.nixpkgs-deprecated.url = "nixpkgs/nixos-24.11";
   inputs.nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
   outputs = inputs@{ self, ... }: let
