@@ -77,10 +77,9 @@
       nodePackages.bash-language-server
       perlnavigator
       python311Packages.pyls-isort
-      python311Packages.python-lsp-server
       texlab
       yaml-language-server
-    ];
+    ] ++ [pkgs.python311Packages.python-lsp-server];
   };
 
   programs.nushell.environmentVariables = {
