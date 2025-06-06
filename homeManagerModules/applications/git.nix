@@ -32,6 +32,11 @@
         untrackedCache = true;
         fsmonitor = true;
       };
+      "tig \"color\"" = {
+	cursor = "red default underline";
+	title-blur = "cyan default";
+	title-focus = "cyan default bold";
+      };
     };
   };
 }
