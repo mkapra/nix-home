@@ -4,6 +4,7 @@
   imports = [
     ./gnome.nix
     ./i3.nix
+    ./aerospace.nix
   ];
 
   config = lib.mkIf config.mkapra-home.private-desktop.enable {
