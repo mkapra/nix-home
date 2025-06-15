@@ -14,10 +14,7 @@
     programs.zellij.enable = true;
     mkapra-home.rust.enable = true;
 
-    fonts.fontconfig.enable = true;
-
     home.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
       bitwarden-desktop
     ];
 
