@@ -17,10 +17,6 @@
         nu -c $"($cmd) --help" | bat --style=plain --paging=never
       }
     '';
-
-    extraEnv = ''
-      $env.__zoxide_hooked = true
-    '';
   };
 
   programs.carapace.enableNushellIntegration = config.programs.nushell.enable;
