@@ -6,6 +6,10 @@
       grep = "rg";
     };
 
+    extraEnv = ''
+      $env.LS_COLORS = (${pkgs-unstable.vivid}/bin/vivid generate ${./static/everforest_vivid_theme})
+    '';
+
     extraConfig = ''
       $env.config.show_banner = false
 
