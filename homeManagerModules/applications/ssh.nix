@@ -1,9 +1,4 @@
-{ config, ... }:
-let
-  environmentVariables = {
-    SSH_AUTH_SOCK = "$HOME/.ssh/ssh_auth_sock";
-  };
-in {
+{ config, ... }: {
   home.file.".ssh/rc" = {
     executable = true;
     text = ''
@@ -28,6 +23,4 @@ in {
   programs.tmux.extraConfig = ''
     setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
   '';
-
-  home.sessionVariables = environmentVariables;
 }
