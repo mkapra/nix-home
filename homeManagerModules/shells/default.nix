@@ -14,8 +14,13 @@
   programs.zoxide.package = pkgs-unstable.zoxide;
   programs.ripgrep.enable = true;
   programs.ripgrep.package = pkgs-unstable.ripgrep;
-  programs.direnv.enable = true;
-  programs.direnv.package = pkgs-unstable.direnv;
+
+  programs.direnv = {
+    enable = true;
+    package = pkgs-unstable.direnv;
+    nix-direnv.enable = true;
+  };
+
   programs.carapace.enable = true;
   programs.carapace.package = pkgs-unstable.carapace;
 }
