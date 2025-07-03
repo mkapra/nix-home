@@ -1,10 +1,7 @@
 { pkgs-unstable, ... }: {
   programs.zellij.package = pkgs-unstable.zellij;
 
-  home.file.".config/zellij/config.kdl".text = ''
-default_shell "nu"
-theme "everforest-light-custom"
-'';
+  home.file.".config/zellij/config.kdl".source = ../files/zellij_config.kdl;
 
   home.file.".config/zellij/themes/everforest-light.kdl".text = ''
 themes {
