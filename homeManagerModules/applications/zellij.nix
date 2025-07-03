@@ -5,18 +5,6 @@
 default_shell "nu"
 theme "everforest-light-custom"
 
-keybinds {
-	shared_except "session" "locked" {
-		bind "Ctrl Alt f" {
-			ToggleFloatingPanes;
-		}
-		bind "Ctrl Alt o" {
-			SwitchToMode "Session"
-		}
-	}
-	unbind "Ctrl o" "Alt o" "Alt f"
-}
-
 themes {
 	everforest-light-custom {
 		bg "#fdf6e3"
