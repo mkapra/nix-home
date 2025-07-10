@@ -68,6 +68,11 @@
           };
         }
       ];
+      language-server.yaml-language-server.config = {
+        yaml.customTags = [
+          "!reference sequence"
+        ];
+      };
     };
     extraPackages = with pkgs-unstable; [
       dockerfile-language-server-nodejs
