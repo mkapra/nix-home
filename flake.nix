@@ -5,7 +5,19 @@
 
   outputs = inputs@{ self, ... }: let
     system = "x86_64-linux";
-    pkgs = import inputs.nixpkgs { inherit system; };
+
+    pylsp-override = pkgs.python3Packages.python-lsp-server.overridePythonAttrs (oldAttrs: {
+      propagatedBuildInputs =
+        (oldAttrs.propagatedBuildInputs or [])
+        ++ (with pkgs.python3Packages; [pylsp-mypy pylsp-rope pyls-memestra]);
+    });
+
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      overlays = [
+        pylsp-override
+      ];
+    };
     pkgs-deprecated = import inputs.nixpkgs-deprecated { inherit system; };
     pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
   in {
