@@ -8,6 +8,7 @@
     ./fd.nix
     ./zellij.nix
     ./kitty.nix
+    ./jujutsu.nix
   ];
 
   home.packages = with pkgs-unstable; [
