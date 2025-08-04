@@ -24,4 +24,6 @@
 
   programs.carapace.enable = true;
   programs.carapace.package = pkgs-unstable.carapace;
+
+  programs.starship.enable = true;
 }

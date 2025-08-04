@@ -68,4 +68,5 @@
   programs.carapace.enableBashIntegration = config.programs.bash.enable;
   programs.direnv.enableBashIntegration = config.programs.bash.enable;
   programs.zoxide.enableBashIntegration = config.programs.bash.enable;
+  programs.starship.enableBashIntegration = config.programs.bash.enable;
 }

@@ -31,4 +31,5 @@ in {
   programs.carapace.enableNushellIntegration = config.programs.nushell.enable;
   programs.direnv.enableNushellIntegration = config.programs.nushell.enable;
   programs.zoxide.enableNushellIntegration = config.programs.nushell.enable;
+  programs.starship.enableNushellIntegration = config.programs.nushell.enable;
 }
