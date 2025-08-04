@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs-unstable, ... }: {
   programs.jujutsu = {
     enable = true;
     settings = {
