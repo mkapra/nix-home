@@ -20,6 +20,8 @@
 
       bind-key % split-window -h -c "#{pane_current_path}"
       bind-key \" split-window -v -c "#{pane_current_path}"
+      bind-key -n 'M-v' split-window -h -c "#{pane_current_path}"
+      bind-key -n 'M-s' split-window -v -c "#{pane_current_path}"
 
       # pane selection
       bind-key -n 'M-Left' select-pane -L
