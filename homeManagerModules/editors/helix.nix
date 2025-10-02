@@ -56,14 +56,14 @@
         {
           name = "javascript";
           formatter = {
-            command = "${pkgs.unstable.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
         {
           name = "typescript";
           formatter = {
-            command = "${pkgs.unstable.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
@@ -74,7 +74,7 @@
         ];
       };
     };
-    extraPackages = with pkgs.unstable; [
+    extraPackages = with pkgs; [
       dockerfile-language-server-nodejs
       marksman
       markdown-oxide
@@ -83,7 +83,8 @@
       perlnavigator
       texlab
       yaml-language-server
-    ] ++ [ pkgs.python3Packages.python-lsp-server ];
+      python3Packages.python-lsp-server
+    ];
   };
 
   programs.nushell.environmentVariables = {
