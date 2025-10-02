@@ -8,14 +8,6 @@
       "builtin *"
     ];
     bashrcExtra = ''
-      export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-        --color=fg:#5c6a72,fg+:#708089,bg:#fdf6e3,bg+:#efebd4
-        --color=hl:#e66868,hl+:#f85552,info:#afaf87,marker:#8da101
-        --color=prompt:#df69ba,spinner:#af5fff,pointer:#af5fff,header:#87afaf
-        --color=gutter:#fdf6e3,border:#5c6a72,label:#aeaeae,query:#d9d9d9
-        --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-        --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
-
       git_branch() {
         if $(git rev-parse --git-dir > /dev/null 2>&1); then
           local branch_name=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
