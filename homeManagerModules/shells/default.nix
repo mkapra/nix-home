@@ -13,11 +13,6 @@
     ];
   };
 
-  programs.bat = {
-    enable = true;
-    config = { theme = "ansi"; };
-  };
-
   programs.zoxide.enable = true;
   programs.zoxide.package = pkgs.unstable.zoxide;
 
