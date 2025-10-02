@@ -12,7 +12,7 @@
     ./jujutsu.nix
   ];
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     tig
     glow
   ];

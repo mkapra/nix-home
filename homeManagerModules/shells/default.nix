@@ -14,10 +14,10 @@
   };
 
   programs.zoxide.enable = true;
-  programs.zoxide.package = pkgs.unstable.zoxide;
+  programs.zoxide.package = pkgs.zoxide;
 
   programs.ripgrep.enable = true;
-  programs.ripgrep.package = pkgs.unstable.ripgrep;
+  programs.ripgrep.package = pkgs.ripgrep;
 
   programs.direnv = {
     enable = true;
