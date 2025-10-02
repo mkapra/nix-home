@@ -1,5 +1,5 @@
-{ pkgs-unstable, ... }: {
-  programs.zellij.package = pkgs-unstable.zellij;
+{ pkgs, ... }: {
+  programs.zellij.package = pkgs.unstable.zellij;
 
   home.file.".config/zellij/config.kdl".source = ../files/zellij_config.kdl;
 

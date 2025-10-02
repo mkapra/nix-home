@@ -1,8 +1,8 @@
-{ config, pkgs-unstable, ... }: let
-  stdenv = pkgs-unstable.stdenv;
+{ config, pkgs, ... }: let
+  stdenv = pkgs.unstable.stdenv;
 in {
   programs.nushell = {
-    package = pkgs-unstable.nushell;
+    package = pkgs.unstable.nushell;
     shellAliases = {
       nd = "nix develop -c $env.SHELL";
       grep = "rg";
@@ -16,7 +16,7 @@ in {
           "append []"
         }
       )
-      $env.LS_COLORS = (${pkgs-unstable.vivid}/bin/vivid generate ${./static/everforest_vivid_theme})
+      $env.LS_COLORS = (${pkgs.unstable.vivid}/bin/vivid generate ${./static/everforest_vivid_theme})
     '';
 
     extraConfig = ''

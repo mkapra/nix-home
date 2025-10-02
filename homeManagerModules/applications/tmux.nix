@@ -1,6 +1,6 @@
-{ pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   programs.tmux = {
-    package = pkgs-unstable.tmux;
+    package = pkgs.tmux;
     enable = true;
     baseIndex = 1;
     escapeTime = 5;

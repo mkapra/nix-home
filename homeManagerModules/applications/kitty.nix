@@ -1,6 +1,6 @@
-{ pkgs-unstable, config, ... }: {
+{ pkgs, config, ... }: {
   programs.kitty = {
-    package = pkgs-unstable.kitty;
+    package = pkgs.unstable.kitty;
     themeFile = "everforest_light_medium";
     shellIntegration = {
       mode = "no-cursor";

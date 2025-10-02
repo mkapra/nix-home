@@ -1,10 +1,10 @@
-{ pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   home.file = {
     ".config/helix/themes/everforest_light.toml".source = ../files/helix_everforest_light.toml;
   };
 
   programs.helix = {
-    package = pkgs-unstable.helix;
+    package = pkgs.unstable.helix;
     defaultEditor = true;
     settings = {
       theme = "everforest_light";
@@ -56,14 +56,14 @@
         {
           name = "javascript";
           formatter = {
-            command = "${pkgs-unstable.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs.unstable.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
         {
           name = "typescript";
           formatter = {
-            command = "${pkgs-unstable.nodePackages.prettier}/bin/prettier";
+            command = "${pkgs.unstable.nodePackages.prettier}/bin/prettier";
             args = ["--parser" "typescript" "--print-width" "100"];
           };
         }
@@ -74,7 +74,7 @@
         ];
       };
     };
-    extraPackages = with pkgs-unstable; [
+    extraPackages = with pkgs.unstable; [
       dockerfile-language-server-nodejs
       marksman
       markdown-oxide

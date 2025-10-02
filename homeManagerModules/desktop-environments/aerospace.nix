@@ -1,7 +1,7 @@
-{ config, pkgs, pkgs-unstable, lib, ... }: let
+{ config, pkgs, lib, ... }: let
   stdenv = pkgs.stdenv;
 in lib.mkIf stdenv.isDarwin {
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs.unstable; [
     arc-browser
     raycast
     sketchybar
@@ -19,22 +19,22 @@ in lib.mkIf stdenv.isDarwin {
 
   home.file.".local/bin/sketchybar-wrapper".text = ''
     #!/usr/bin/env bash
-    export PATH="${pkgs-unstable.lib.makeBinPath [
-      pkgs-unstable.sketchybar
-      pkgs-unstable.jq
-      pkgs-unstable.yabai
-      pkgs-unstable.coreutils
-      pkgs-unstable.bash
-      pkgs-unstable.aerospace
+    export PATH="${pkgs.unstable.lib.makeBinPath [
+      pkgs.unstable.sketchybar
+      pkgs.unstable.jq
+      pkgs.unstable.yabai
+      pkgs.unstable.coreutils
+      pkgs.unstable.bash
+      pkgs.unstable.aerospace
     ]}:$PATH"
 
-    exec ${pkgs-unstable.sketchybar}/bin/sketchybar "$@"
+    exec ${pkgs.unstable.sketchybar}/bin/sketchybar "$@"
   '';
   home.file.".local/bin/sketchybar-wrapper".executable = true;
 
   programs.aerospace = {
     enable = true;
-    package = pkgs-unstable.aerospace;
+    package = pkgs.unstable.aerospace;
     userSettings = {
       after-login-command = [];
       after-startup-command = [
@@ -69,7 +69,7 @@ in lib.mkIf stdenv.isDarwin {
       exec-on-workspace-change = [
         "/bin/bash"
         "-c"
-        "${pkgs-unstable.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+        "${pkgs.unstable.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
       ];
 
       mode.main.binding = {

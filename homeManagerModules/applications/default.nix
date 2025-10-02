@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./btop.nix
     ./tmux.nix
@@ -11,7 +11,7 @@
     ./jujutsu.nix
   ];
 
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs.unstable; [
     tig
     glow
   ];

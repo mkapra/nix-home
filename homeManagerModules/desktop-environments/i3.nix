@@ -1,4 +1,4 @@
-{ pkgs-unstable, lib, config, ... }: let
+{ pkgs, lib, config, ... }: let
   modifier = "Mod4";
   ws1 = "1";
   ws2 = "2";
@@ -13,7 +13,7 @@
 
   refresh_i3status = "killall -SIGUSR1 i3status";
 in lib.mkIf config.xsession.windowManager.i3.enable {
-  home.packages = with pkgs-unstable; [ flameshot ];
+  home.packages = with pkgs.unstable; [ flameshot ];
   home.file.".background-image".source = ./wallpapers/nix.png;
 
   programs.i3status = {
@@ -80,7 +80,7 @@ in lib.mkIf config.xsession.windowManager.i3.enable {
   };
 
   xsession.windowManager.i3 = {
-    package = pkgs-unstable.i3;
+    package = pkgs.unstable.i3;
 
     extraConfig = ''
       hide_edge_borders smart
@@ -220,7 +220,7 @@ in lib.mkIf config.xsession.windowManager.i3.enable {
         };
       };
       bars = [{
-        statusCommand = "${pkgs-unstable.i3status}/bin/i3status";
+        statusCommand = "${pkgs.unstable.i3status}/bin/i3status";
         trayOutput = "primary";
         position = "top";
         colors = {

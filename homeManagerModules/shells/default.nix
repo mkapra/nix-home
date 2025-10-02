@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-{ pkgs-unstable, ... }: {
-=======
 { pkgs, lib, ... }: {
->>>>>>> Stashed changes
   imports = [ ./bash.nix ./nushell.nix ./zsh.nix ];
 
   home.sessionVariables = {
@@ -23,20 +19,20 @@
   };
 
   programs.zoxide.enable = true;
-  programs.zoxide.package = pkgs-unstable.zoxide;
+  programs.zoxide.package = pkgs.unstable.zoxide;
 
   programs.ripgrep.enable = true;
-  programs.ripgrep.package = pkgs-unstable.ripgrep;
+  programs.ripgrep.package = pkgs.unstable.ripgrep;
 
   programs.direnv = {
     enable = true;
-    package = pkgs-unstable.direnv;
+    package = pkgs.unstable.direnv;
     silent = true;
     nix-direnv.enable = true;
   };
 
   programs.carapace.enable = true;
-  programs.carapace.package = pkgs-unstable.carapace;
+  programs.carapace.package = pkgs.unstable.carapace;
 
   programs.starship.enable = true;
 }
