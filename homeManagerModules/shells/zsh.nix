@@ -36,6 +36,7 @@
     };
   };
 
+  programs.starship.enableZshIntegration = false;
   programs.carapace.enableZshIntegration = config.programs.zsh.enable;
   programs.direnv.enableZshIntegration = config.programs.zsh.enable;
   programs.zoxide.enableZshIntegration = config.programs.zsh.enable;
