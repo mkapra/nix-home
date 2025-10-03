@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   home.file = {
     ".config/git/message".source = ../files/gitmessage;
   };
@@ -33,9 +34,9 @@
         fsmonitor = true;
       };
       "tig \"color\"" = {
-	cursor = "red default underline";
-	title-blur = "cyan default";
-	title-focus = "cyan default bold";
+        cursor = "red default underline";
+        title-blur = "cyan default";
+        title-focus = "cyan default bold";
       };
     };
   };

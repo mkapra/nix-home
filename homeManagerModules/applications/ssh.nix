@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   home.file.".ssh/rc" = {
     executable = true;
     text = ''

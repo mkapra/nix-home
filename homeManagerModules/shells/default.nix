@@ -1,5 +1,10 @@
-{ pkgs, lib, ... }: {
-  imports = [ ./bash.nix ./nushell.nix ./zsh.nix ];
+{ pkgs, lib, ... }:
+{
+  imports = [
+    ./bash.nix
+    ./nushell.nix
+    ./zsh.nix
+  ];
 
   home.sessionVariables = {
     NIX_SHELL_PRESERVE_PROMPT = 1;

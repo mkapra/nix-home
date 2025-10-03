@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
   modifier = "Mod4";
   ws1 = "1";
   ws2 = "2";
@@ -12,7 +18,8 @@
   ws10 = "10";
 
   refresh_i3status = "killall -SIGUSR1 i3status";
-in lib.mkIf config.xsession.windowManager.i3.enable {
+in
+lib.mkIf config.xsession.windowManager.i3.enable {
   home.packages = with pkgs.unstable; [ flameshot ];
   home.file.".background-image".source = ./wallpapers/nix.png;
 
@@ -90,10 +97,22 @@ in lib.mkIf config.xsession.windowManager.i3.enable {
       inherit modifier;
 
       startup = [
-        { command = "dex --autostart --environment i3"; notification = false; }
-        { command = "dunst --startup_notification"; notification = false; }
-        { command = "xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
-        { command = "nm-applet"; notification = false; }
+        {
+          command = "dex --autostart --environment i3";
+          notification = false;
+        }
+        {
+          command = "dunst --startup_notification";
+          notification = false;
+        }
+        {
+          command = "xss-lock --transfer-sleep-lock -- i3lock --nofork";
+          notification = false;
+        }
+        {
+          command = "nm-applet";
+          notification = false;
+        }
       ];
 
       gaps = {
@@ -173,7 +192,8 @@ in lib.mkIf config.xsession.windowManager.i3.enable {
         XF86AudioMute = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && ${refresh_i3status}";
         XF86AudioMicMute = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && ${refresh_i3status}";
 
-        "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes,exit i3' 'i3-msg exit'\"";
+        "${modifier}+Shift+e" =
+          "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes,exit i3' 'i3-msg exit'\"";
       };
       modes = {
         resize = {
@@ -219,40 +239,42 @@ in lib.mkIf config.xsession.windowManager.i3.enable {
           text = "#2D353B";
         };
       };
-      bars = [{
-        statusCommand = "${pkgs.unstable.i3status}/bin/i3status";
-        trayOutput = "primary";
-        position = "top";
-        colors = {
-          background = "#2D353B";
-          statusline = "#D3C6AA";
-          separator = "#7A8478";
+      bars = [
+        {
+          statusCommand = "${pkgs.unstable.i3status}/bin/i3status";
+          trayOutput = "primary";
+          position = "top";
+          colors = {
+            background = "#2D353B";
+            statusline = "#D3C6AA";
+            separator = "#7A8478";
 
-          focusedWorkspace = {
-            background = "#A7C080";
-            border = "#A7C080";
-            text = "#2D353B";
+            focusedWorkspace = {
+              background = "#A7C080";
+              border = "#A7C080";
+              text = "#2D353B";
+            };
+            activeWorkspace = {
+              background = "#7FBBB3";
+              border = "#7FBBB3";
+              text = "#2D353B";
+            };
+            inactiveWorkspace = {
+              background = "#232A2E";
+              border = "#232A2E";
+              text = "#D3C6AA";
+            };
+            urgentWorkspace = {
+              background = "#E67E80";
+              border = "#E67E80";
+              text = "#2D353B";
+            };
           };
-          activeWorkspace = {
-            background = "#7FBBB3";
-            border = "#7FBBB3";
-            text = "#2D353B";
-          };
-          inactiveWorkspace = {
-            background = "#232A2E";
-            border = "#232A2E";
-            text = "#D3C6AA";
-          };
-          urgentWorkspace = {
-            background = "#E67E80";
-            border = "#E67E80";
-            text = "#2D353B";
-          };
-        };
-        extraConfig = ''
-          bindsym button1 nop
-        '';
-      }];
+          extraConfig = ''
+            bindsym button1 nop
+          '';
+        }
+      ];
     };
   };
 }

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }: let
+{ config, pkgs, ... }:
+let
   stdenv = pkgs.unstable.stdenv;
-in {
+in
+{
   programs.nushell = {
     package = pkgs.unstable.nushell;
     shellAliases = {
@@ -10,10 +12,11 @@ in {
 
     extraEnv = ''
       $env.PATH = ($env.PATH | split row (char esep) |
-        ${if stdenv.isDarwin then
-          "append [/etc/profiles/per-user/mkapra/bin /run/current-system/sw/bin]"
-        else
-          "append []"
+        ${
+          if stdenv.isDarwin then
+            "append [/etc/profiles/per-user/mkapra/bin /run/current-system/sw/bin]"
+          else
+            "append []"
         }
       )
       $env.LS_COLORS = (${pkgs.unstable.vivid}/bin/vivid generate ${./static/everforest_vivid_theme})

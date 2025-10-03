@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   dconf.settings = {
     "org/gnome/tweaks" = {
       show-extensions-notice = false;
@@ -13,7 +14,7 @@
     };
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "click";
-        resize-with-right-button = true;
+      resize-with-right-button = true;
     };
     "org/gnome/mutter" = {
       edge-tiling = true;

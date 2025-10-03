@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   options.mkapra-home.private-desktop.enable = lib.mkEnableOption "Setup private desktop environment";
 
   imports = [

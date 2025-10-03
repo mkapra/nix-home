@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.jujutsu = {
     enable = true;
     settings = {
@@ -10,7 +16,7 @@
   };
 
   home.activation = {
-    generate_jj_nushell_completion = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    generate_jj_nushell_completion = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.unstable.jujutsu}/bin/jj util completion nushell > ~/.config/nushell/completions-jj.nu
     '';
   };

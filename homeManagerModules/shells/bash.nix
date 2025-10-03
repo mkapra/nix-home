@@ -1,7 +1,11 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.bash = {
     enableCompletion = true;
-    historyControl = ["erasedups" "ignorespace"];
+    historyControl = [
+      "erasedups"
+      "ignorespace"
+    ];
     historyIgnore = [
       "ls"
       "exit"

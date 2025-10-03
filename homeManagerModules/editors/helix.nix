@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.file = {
     ".config/helix/themes/everforest_light.toml".source = ../files/helix_everforest_light.toml;
   };
@@ -9,12 +10,24 @@
     settings = {
       theme = "everforest_light";
       keys.normal = {
-        V = ["goto_first_nonwhitespace" "extend_to_line_end"];
-        D = ["ensure_selections_forward" "extend_to_line_end"];
-        a = ["append_mode" "collapse_selection"];
+        V = [
+          "goto_first_nonwhitespace"
+          "extend_to_line_end"
+        ];
+        D = [
+          "ensure_selections_forward"
+          "extend_to_line_end"
+        ];
+        a = [
+          "append_mode"
+          "collapse_selection"
+        ];
       };
       keys.select = {
-        ";" = ["collapse_selection" "normal_mode"];
+        ";" = [
+          "collapse_selection"
+          "normal_mode"
+        ];
         x = "extend_line";
         V = "extend_to_line_end";
       };
@@ -57,14 +70,24 @@
           name = "javascript";
           formatter = {
             command = "${pkgs.nodePackages.prettier}/bin/prettier";
-            args = ["--parser" "typescript" "--print-width" "100"];
+            args = [
+              "--parser"
+              "typescript"
+              "--print-width"
+              "100"
+            ];
           };
         }
         {
           name = "typescript";
           formatter = {
             command = "${pkgs.nodePackages.prettier}/bin/prettier";
-            args = ["--parser" "typescript" "--print-width" "100"];
+            args = [
+              "--parser"
+              "typescript"
+              "--print-width"
+              "100"
+            ];
           };
         }
       ];

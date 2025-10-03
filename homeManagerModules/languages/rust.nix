@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   options.mkapra-home.rust.enable = lib.mkEnableOption "install rust";
 
   config = lib.mkIf config.mkapra-home.rust.enable {
@@ -10,15 +16,17 @@
       rustfmt
       clippy
     ];
-  
+
     programs.helix.languages = {
-      language = [{
-        name = "rust";
-        auto-format = true;
-        formatter = {
-          command = "rustfmt";
-        };
-      }];
+      language = [
+        {
+          name = "rust";
+          auto-format = true;
+          formatter = {
+            command = "rustfmt";
+          };
+        }
+      ];
     };
   };
 }
