@@ -1,27 +1,12 @@
 {
   inputs.nixpkgs.url = "nixpkgs/nixos-25.05";
-  inputs.nixpkgs-deprecated.url = "nixpkgs/nixos-24.11";
-  inputs.nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+  inputs.systems.url = "github:nix-systems/default";
 
-  outputs = inputs@{ self, ... }: let
-    system = "x86_64-linux";
-
-    pylsp-override = pkgs.python3Packages.python-lsp-server.overridePythonAttrs (oldAttrs: {
-      propagatedBuildInputs =
-        (oldAttrs.propagatedBuildInputs or [])
-        ++ (with pkgs.python3Packages; [pylsp-mypy pylsp-rope pyls-memestra]);
-    });
-
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-      overlays = [
-        pylsp-override
-      ];
-    };
-    pkgs-deprecated = import inputs.nixpkgs-deprecated { inherit system; };
-    pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
+  outputs = inputs@{ self, nixpkgs, systems, ... }: let
+    eachSystem = nixpkgs.lib.genAttrs (import systems);
   in {
     homeModules.default = self.homeModules.mkapra-home;
-    homeModules.mkapra-home = import ./home.nix { inherit pkgs pkgs-deprecated pkgs-unstable; };
+    homeModules.mkapra-home = import ./home.nix;
+    formatter = eachSystem (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree);
   };
 }
