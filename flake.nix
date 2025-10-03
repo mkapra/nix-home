@@ -21,7 +21,7 @@
     pkgs-deprecated = import inputs.nixpkgs-deprecated { inherit system; };
     pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
   in {
-    homeManagerModules.default = self.homeManagerModules.mkapra-home;
-    homeManagerModules.mkapra-home = import ./home.nix { inherit pkgs pkgs-deprecated pkgs-unstable; };
+    homeModules.default = self.homeModules.mkapra-home;
+    homeModules.mkapra-home = import ./home.nix { inherit pkgs pkgs-deprecated pkgs-unstable; };
   };
 }
