@@ -107,6 +107,8 @@
       texlab
       yaml-language-server
       python3Packages.python-lsp-server
+      ansible-language-server
+      ansible-lint
     ];
   };
 
