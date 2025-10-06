@@ -8,6 +8,7 @@
     secureSocket = false;
     sensibleOnTop = true;
     keyMode = "vi";
+    mouse = true;
     historyLimit = 10000;
     terminal = "tmux-256color";
     extraConfig = ''
