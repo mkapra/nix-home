@@ -37,6 +37,8 @@
       update_check_interval = 0;
 
       term = "xterm-256color";
+
+      macos_option_as_alt = "yes";
     };
   };
 }
