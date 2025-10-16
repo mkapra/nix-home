@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./applications
@@ -9,5 +9,5 @@
   ];
 
   fonts.fontconfig.enable = true;
-  home.packages = [ pkgs-unstable.nerd-fonts.jetbrains-mono ];
+  home.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 }
