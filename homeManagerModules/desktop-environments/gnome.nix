@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  dconf.settings = {
+  dconf.settings = lib.mkIf config.mkapra-home.private-desktop.enable {
     "org/gnome/tweaks" = {
       show-extensions-notice = false;
     };
