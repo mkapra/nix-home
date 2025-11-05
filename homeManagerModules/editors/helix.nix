@@ -10,6 +10,12 @@
     settings = {
       theme = "everforest_light";
       keys.normal = {
+        C-g = [
+          ":new"
+          ":insert-output lazygit"
+          ":buffer-close"
+          ":redraw"
+        ];
         V = [
           "goto_first_nonwhitespace"
           "extend_to_line_end"
@@ -22,6 +28,12 @@
           "append_mode"
           "collapse_selection"
         ];
+        space = {
+          space.h = ":toggle-option file-picker.hidden";
+          space.b = ":sh ${pkgs.tmux}/bin/tmux new-window '${pkgs.tig}/bin/tig blame +%{cursor_line} %{buffer_name}'";
+          B = ":sh ${pkgs.git}/bin/git blame -L %{cursor_line},+1 %{buffer_name}";
+          i = ["open_below" ":append-output echo debugger" "normal_mode" ":write"];
+        };
       };
       keys.select = {
         ";" = [
