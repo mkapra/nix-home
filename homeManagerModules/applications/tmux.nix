@@ -61,20 +61,23 @@
       set -g pane-border-style fg="#e3ddcc"
 
       # Status
-      set -g status on
+      normal_fg="#5c6a72"
+      highlight_fg="#f57d26"
+      grey0="#a6b0a0"
+      grey1="#939f91"
+      grey2="#829181"
+
       set -g status-position bottom
-
-      set -g status-style bg="#fdf6e3",fg="#5c6a72"
-
+      set -g status-style "fg=${normal_fg},bg=default"
+      set -g status-left-length 0
       set -g status-left ""
-
-      set -g status-right "#[bg=#fdf6e3,fg=#d699b6]#[bg=#d699b6,fg=#fdf6e3] #S ｜ 🖳 #h #[bg=#fdf6e3,fg=#d699b6]"
-
-      set -g window-status-format "#[bg=#FDF6E3,fg=#BDC3AF]#[bg=#BDC3AF,fg=#FDF6E3]#I #[bg=#E6E2CC,fg=#939F91] #W #[bg=#FDF6E3,fg=#E6E2CC]"
-
-      set -g window-status-current-format "#[bg=#fdf6e3,fg=#e69875]#[bg=#e69875,fg=#fdf6e3]#I #[bg=#f7d3b0,fg=#5c6a72] #W #[bg=#fdf6e3,fg=#f7d3b0]"
-
-      setw -g window-status-separator " "
+      set -g status-right "#[fg=${normal_fg}]#S | 🖳 #h"
+      set -g window-status-current-format "#[fg=${highlight_fg},bold] #[underscore]#I:#W"
+      set -g window-status-format " #[nobold]#I:#W"
+      set -g message-style "fg=${normal_fg},bg=default"
+      set -g mode-style "fg=${normal_fg},bg=${highlight_fg}"
+      set -g pane-border-style "fg=${grey0},bg=default"
+      set -g pane-active-border-style "fg=${grey2},bg=default"
     '';
   };
 
