@@ -17,7 +17,7 @@
 
   home.activation = {
     generate_jj_nushell_completion = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      ${pkgs.unstable.jujutsu}/bin/jj util completion nushell > ~/.config/nushell/completions-jj.nu
+      run ${pkgs.unstable.jujutsu}/bin/jj util completion nushell > ~/.config/nushell/completions-jj.nu
     '';
   };
   programs.nushell.extraConfig = ''
