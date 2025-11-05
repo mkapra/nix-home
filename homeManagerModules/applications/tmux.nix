@@ -68,16 +68,16 @@
       grey2="#829181"
 
       set -g status-position bottom
-      set -g status-style "fg=${normal_fg},bg=default"
+      set -g status-style "fg=''${normal_fg},bg=default"
       set -g status-left-length 0
       set -g status-left ""
-      set -g status-right "#[fg=${normal_fg}]#S | 🖳 #h"
-      set -g window-status-current-format "#[fg=${highlight_fg},bold] #[underscore]#I:#W"
+      set -g status-right "#[fg=''${normal_fg}]#S | 🖳 #h"
+      set -g window-status-current-format "#[fg=''${highlight_fg},bold] #[underscore]#I:#W"
       set -g window-status-format " #[nobold]#I:#W"
-      set -g message-style "fg=${normal_fg},bg=default"
-      set -g mode-style "fg=${normal_fg},bg=${highlight_fg}"
-      set -g pane-border-style "fg=${grey0},bg=default"
-      set -g pane-active-border-style "fg=${grey2},bg=default"
+      set -g message-style "fg=''${normal_fg},bg=default"
+      set -g mode-style "fg=''${normal_fg},bg=''${highlight_fg}"
+      set -g pane-border-style "fg=''${grey0},bg=default"
+      set -g pane-active-border-style "fg=''${grey2},bg=default"
     '';
   };
 
