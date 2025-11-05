@@ -11,6 +11,8 @@ in
     };
 
     extraEnv = ''
+      $env.PROMPT_COMMAND_RIGHT = ""
+
       $env.PATH = ($env.PATH | split row (char esep) |
         ${
           if stdenv.isDarwin then
