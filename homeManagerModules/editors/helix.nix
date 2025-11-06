@@ -110,17 +110,18 @@
       };
     };
     extraPackages = with pkgs; [
+      ansible-language-server
+      ansible-lint
       dockerfile-language-server-nodejs
-      marksman
       markdown-oxide
+      marksman
       nil
       nodePackages.bash-language-server
       perlnavigator
+      python3Packages.python-lsp-server
+      ruby-lsp
       texlab
       yaml-language-server
-      python3Packages.python-lsp-server
-      ansible-language-server
-      ansible-lint
     ];
   };
 
