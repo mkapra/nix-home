@@ -111,7 +111,6 @@
     };
     extraPackages = with pkgs; [
       ansible-language-server
-      ansible-lint
       dockerfile-language-server-nodejs
       markdown-oxide
       marksman
